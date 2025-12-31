@@ -30,12 +30,11 @@ public class KaryawanKontrak extends Karyawan { // Kelas KaryawanKontrak
         double potonganBPJS = 0.03 * gajiPokok; // Potongan BPJS 3%
 
         // Tambahan tunjangan keluarga
-        double tunjanganIstri = (statusMenikah == StatusMenikah.MENIKAH) ? 500000 : 0; // Tunjangan istri
+        double tunjanganPasangan = (statusMenikah == StatusMenikah.MENIKAH) ? 500000 : 0; // Tunjangan suami/istri
         double tunjanganAnak = Math.min(jumlahAnak, 3) * 250000; // Tunjangan anak maksimal 3 anak
 
         double total = gajiPokok + tunjanganJabatan + tunjanganPendidikan + bonusPerforma // Total gaji bersih 
-                       + tunjanganIstri + tunjanganAnak - potonganBPJS; // Hitung total
-
+                       + tunjanganPasangan + tunjanganAnak - potonganBPJS; // Hitung total
         return UMRConfig.validasiUMR(total); // Validasi terhadap UMR
     }
 

@@ -200,7 +200,7 @@ public class MainApp { // Kelas utama aplikasi
     
 
     // Hitung tunjangan keluarga langsung
-    double tunjanganIstri = (karyawan.getStatusMenikah() == Karyawan.StatusMenikah.MENIKAH) ? 500000 : 0; // Tunjangan istri
+    double tunjanganPasangan = (karyawan.getStatusMenikah() == Karyawan.StatusMenikah.MENIKAH) ? 500000 : 0; // Tunjangan suami/istri
     double tunjanganAnak = Math.min(karyawan.getJumlahAnak(), 3) * 250000; // Tunjangan anak
 
     // Hitung tunjangan jabatan
@@ -219,16 +219,16 @@ public class MainApp { // Kelas utama aplikasi
     double totalGaji = karyawan.hitungGajiBersih(performa); // Hitung total gaji bersih
 
     // Breakdown komponen
-    System.out.printf("Gaji Pokok          : Rp %,d%n", (long) gajiPokok); // Tampilkan gaji pokok
-    System.out.printf("Tunjangan Jabatan   : Rp %,d%n", (long) tunjanganJabatan); // Tampilkan tunjangan jabatan
-    System.out.printf("Tunjangan Pendidikan: Rp %,d%n", (long) tunjanganPendidikan); // Tampilkan tunjangan pendidikan
-    System.out.printf("Bonus Performa      : Rp %,d%n", (long) bonusPerforma); // Tampilkan bonus performa
-    System.out.printf("Tunjangan Istri     : Rp %,d%n", (long) tunjanganIstri); // Tampilkan tunjangan istri
-    System.out.printf("Tunjangan Anak      : Rp %,d%n", (long) tunjanganAnak); // Tampilkan tunjangan anak
-    System.out.printf("Potongan BPJS       : Rp %,d%n", (long) potonganBPJS); // Tampilkan potongan BPJS
+    System.out.printf("Gaji Pokok            : Rp %,d%n", (long) gajiPokok); // Tampilkan gaji pokok
+    System.out.printf("Tunjangan Jabatan     : Rp %,d%n", (long) tunjanganJabatan); // Tampilkan tunjangan jabatan
+    System.out.printf("Tunjangan Pendidikan  : Rp %,d%n", (long) tunjanganPendidikan); // Tampilkan tunjangan pendidikan
+    System.out.printf("Bonus Performa        : Rp %,d%n", (long) bonusPerforma); // Tampilkan bonus performa
+    System.out.printf("Tunjangan Suami/Istri : Rp %,d%n", (long) tunjanganPasangan); // Tampilkan tunjangan suami/istri
+    System.out.printf("Tunjangan Anak        : Rp %,d%n", (long) tunjanganAnak); // Tampilkan tunjangan anak
+    System.out.printf("Potongan BPJS         : Rp %,d%n", (long) potonganBPJS); // Tampilkan potongan BPJS
 
     System.out.println("----------------------------------------"); // Garis pemisah
-    System.out.printf("Total Gaji Bersih   : Rp %,d%n", (long) totalGaji); // Tampilkan total gaji bersih
+    System.out.printf("Total Gaji Bersih      : Rp %,d%n", (long) totalGaji); // Tampilkan total gaji bersih
     System.out.println("----------------------------------------"); // Garis pemisah
 }
 
